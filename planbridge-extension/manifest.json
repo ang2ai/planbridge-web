@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "PlanBridge",
+  "version": "0.1.0",
+  "description": "기획-개발 브릿지 시스템. 웹 요소를 선택하고 정책을 관리합니다.",
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "PlanBridge"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
